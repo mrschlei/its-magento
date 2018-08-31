@@ -21,7 +21,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
   && mv composer.phar /usr/local/bin/composer \
   && ln -s /usr/local/bin/composer /usr/bin/composer
 
-RUN composer install
+#RUN composer install
 
 # removing git now that composer is installed.
 RUN apt-get remove -y git \
