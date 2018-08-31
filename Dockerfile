@@ -31,11 +31,11 @@ RUN apt-get remove -y git \
 RUN mkdir -p /tmp/sites
 
 ### change directory owner, as openshift user is in root group.
-RUN chown -R root:root /var/www/html/sites
+#RUN chown -R root:root /var/www/html/sites
 
 ### Modify perms for the openshift user, who is not root, but part of root group.
 RUN chmod -R g+r /var/www/html 
-RUN chmod -R g+rw /var/www/html/sites 
+#RUN chmod -R g+rw /var/www/html/sites 
 
 RUN a2enmod ssl
 #RUN a2ensite default-ssl 
