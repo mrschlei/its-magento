@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     wget \
     make \
+    autoconf \
     unzip \
     cron \
     curl \
