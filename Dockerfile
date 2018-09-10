@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     sudo \
     wget \
+    make \
     unzip \
     cron \
     curl \
