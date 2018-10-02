@@ -34,7 +34,8 @@ RUN apt-get update && apt-get install -y \
     supervisor \
     mysql-client \
     ocaml \
-    expect
+    expect \
+    npm
 RUN curl -L https://github.com/bcpierce00/unison/archive/2.48.4.tar.gz | tar zxv -C /tmp && \
              cd /tmp/unison-2.48.4 && \
              sed -i -e 's/GLIBC_SUPPORT_INOTIFY 0/GLIBC_SUPPORT_INOTIFY 1/' src/fsmonitor/linux/inotify_stubs.c && \
