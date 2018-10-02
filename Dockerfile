@@ -65,8 +65,8 @@ RUN apt-get clean && apt-get update && apt-get install -y nodejs \
     && a2enmod proxy_fcgi \
     && rm -f /etc/apache2/sites-enabled/000-default.conf \
     && useradd -m -d /home/magento2 -s /bin/bash magento2 && adduser magento2 sudo \
-    && echo "magento2 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
-    && touch /etc/sudoers.d/privacy \
+    && echo "magento2 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN touch /etc/sudoers.d/privacy \
     && echo "Defaults        lecture = never" >> /etc/sudoers.d/privacy \
     && mkdir /home/magento2/magento2 && mkdir /var/www/magento2 \
     && mkdir /home/magento2/state \
