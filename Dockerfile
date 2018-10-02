@@ -56,8 +56,11 @@ RUN curl -L https://github.com/bcpierce00/unison/archive/2.48.4.tar.gz | tar zxv
     && mkdir /var/run/sshd
 RUN apt-get clean && apt-get update && apt-get install -y nodejs \
     && ln -s /usr/bin/nodejs /usr/bin/node \
-    && apt-get install -y npm \
-    && npm update -g npm && npm install -g grunt-cli && npm install -g gulp \
+    
+    && apt-get install -y nodejs \
+    #&& apt-get install -y npm \
+    #&& npm update -g npm && npm install -g grunt-cli && npm install -g gulp \
+    
     && echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config \
     && apt-get install -y apache2 \
     && a2enmod rewrite \
