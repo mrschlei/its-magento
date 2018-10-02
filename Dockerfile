@@ -74,7 +74,8 @@ RUN touch /etc/sudoers.d/privacy \
     && mkdir /home/magento2/magento2 && mkdir /var/www/magento2 \
     && mkdir /home/magento2/state \
     && curl -sS https://accounts.magento.cloud/cli/installer -o /home/magento2/installer \
-    && rm -r /usr/local/etc/php-fpm.d/* \
+    #this directory doesn't seem to exist, baby
+    #&& rm -r /usr/local/etc/php-fpm.d/* \
     && sed -i 's/www-data/magento2/g' /etc/apache2/envvars
 
 #RUN composer install
