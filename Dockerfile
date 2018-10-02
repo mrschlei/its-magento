@@ -34,8 +34,8 @@ RUN apt-get update && apt-get install -y \
     supervisor \
     mysql-client \
     ocaml \
-    expect \
-    && curl -L https://github.com/bcpierce00/unison/archive/2.48.4.tar.gz | tar zxv -C /tmp && \
+    expect
+RUN curl -L https://github.com/bcpierce00/unison/archive/2.48.4.tar.gz | tar zxv -C /tmp && \
              cd /tmp/unison-2.48.4 && \
              sed -i -e 's/GLIBC_SUPPORT_INOTIFY 0/GLIBC_SUPPORT_INOTIFY 1/' src/fsmonitor/linux/inotify_stubs.c && \
              make && \
@@ -53,8 +53,8 @@ RUN apt-get update && apt-get install -y \
     && echo "xdebug.idekey=PHPSTORM" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.max_nesting_level=1000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && chmod 666 /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
-    && mkdir /var/run/sshd \
-    && apt-get clean && apt-get update && apt-get install -y nodejs \
+    && mkdir /var/run/sshd
+RUN apt-get clean && apt-get update && apt-get install -y nodejs \
     && ln -s /usr/bin/nodejs /usr/bin/node \
     && apt-get install -y npm \
     && npm update -g npm && npm install -g grunt-cli && npm install -g gulp \
